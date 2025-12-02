@@ -13,7 +13,7 @@ The purpose of this project is to make it easier to read and interpret the data 
 It's designed to help me quickly understand my gameplay statistics and patterns without having to use excel for analysis.
 
 # Requirements
-Python 3.13.3
-openpyxl>=3.1.5
-pandas>=2.3.3
-marimo>=0.18.1
+- Python 3.13.3
+- openpyxl>=3.1.5
+- pandas>=2.3.3
+- marimo>=0.18.1

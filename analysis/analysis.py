@@ -86,10 +86,16 @@ def _(mo):
 @app.cell
 def _(df):
     #Ante seed
-    ante_seed = df[['Win/Loss','Seed','Highest Ante']]
+    ante_seed = df[['Main Hand', 'Secondary Hand','Win/Loss','Seed','Highest Ante']]
 
     # sorting by highest ante descending
     ante_seed = ante_seed.sort_values(by='Highest Ante', ascending=False)
+
+    # Filling Nan Values with None
+    ante_seed = ante_seed.fillna('NONE')
+
+    # Resetting index
+    ante_seed = ante_seed.reset_index(drop=True)
 
     # show ante seed
     ante_seed

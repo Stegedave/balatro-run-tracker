@@ -12,6 +12,16 @@ The purpose of this project is to make it easier to read and interpret the data 
 
 It's designed to help me quickly understand my gameplay statistics and patterns without having to use excel for analysis.
 
+# Example Visuals
+### Joker Counts
+![Joker Counts]("D:\Coding\Projects\balatro\screenshots\jokers_count.png")
+
+### Most Played Main and Secondary Hands
+![Main Hands Played]("D:\Coding\Projects\balatro\screenshots\most_played_hands.png")
+
+### Run Status
+![Run Status]("D:\Coding\Projects\balatro\screenshots\run_status.png")
+
 # Requirements
 - Python 3.13.3
 - openpyxl>=3.1.5

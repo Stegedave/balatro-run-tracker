@@ -7,7 +7,8 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import pandas as pd
-    return (pd,)
+    import marimo as mo
+    return mo, pd
 
 
 @app.cell
@@ -15,10 +16,15 @@ def _(pd):
     # loading balatro data
     path_to_data = r"C:\Users\WanDr\Desktop\balatro_hands.xlsx"
     df = pd.read_excel(path_to_data, sheet_name="run_tracker", skiprows=2)
-
-    # preview data
-    print(df.head())
     return (df,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # **Most Frequenctly Used Jokers**
+    """)
+    return
 
 
 @app.cell
@@ -33,7 +39,60 @@ def _(df):
     joker_count = all_jokers.value_counts()
 
     # show joker count
-    joker_count.to_frame(name="Joker Count")
+    joker_count
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # **Most Played Main & Secondary Hands**
+    """)
+    return
+
+
+@app.cell
+def _(df, pd):
+    # Hand frequency count
+    main_hand_count = df['Main Hand'].value_counts()
+    secondary_hand_count = df['Secondary Hand'].value_counts()
+
+    # combine both into a single dataframe
+    hand_counts = pd.concat(
+        [main_hand_count, secondary_hand_count],
+        axis=1
+    )
+
+    # setting column names
+    hand_counts.columns = ['Main Hand count', 'Secondary Hand count']
+
+    # filling in NAN values with "Not Played Yet"
+    hand_counts = hand_counts.fillna('Not Played')
+
+    # show hand count
+    hand_counts
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # **Run Status, Seed, and Highest Ante Reached in Seed**
+    #### ***(sorted in descending order)***
+    """)
+    return
+
+
+@app.cell
+def _(df):
+    #Ante seed
+    ante_seed = df[['Win/Loss','Seed','Highest Ante']]
+
+    # sorting by highest ante descending
+    ante_seed = ante_seed.sort_values(by='Highest Ante', ascending=False)
+
+    # show ante seed
+    ante_seed
     return
 
 

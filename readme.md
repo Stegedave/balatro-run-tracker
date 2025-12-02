@@ -20,7 +20,7 @@ It's designed to help me quickly understand my gameplay statistics and patterns 
 <img src="screenshots\most_played_hands.png" alt="Most Played Hands" width=500>
 
 ### Run Status
-<img src="screenshots\run_status.png" alt="Run Status" width=500>
+<img src="\screenshots\run_status.png" alt="Run Status" width=500>
 
 # Requirements
 - Python 3.13.3

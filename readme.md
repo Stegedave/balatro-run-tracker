@@ -14,13 +14,13 @@ It's designed to help me quickly understand my gameplay statistics and patterns 
 
 # Example Visuals
 ### Joker Counts
-![Joker Counts]("D:\Coding\Projects\balatro\screenshots\jokers_count.png")
+<img src="D:\Coding\Projects\balatro\screenshots\jokers_count.png" alt="Joker Counts" width=500>
 
 ### Most Played Main and Secondary Hands
-![Main Hands Played]("D:\Coding\Projects\balatro\screenshots\most_played_hands.png")
+<img src="D:\Coding\Projects\balatro\screenshots\most_played_hands.png" alt="Most Played Hands" width=500>
 
 ### Run Status
-![Run Status]("D:\Coding\Projects\balatro\screenshots\run_status.png")
+<img src="D:\Coding\Projects\balatro\screenshots\run_status.png" alt="Run Status" width=500>
 
 # Requirements
 - Python 3.13.3

@@ -77,7 +77,7 @@ def _(df, pd):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # **Run Status, Seed, and Highest Ante Reached in Seed**
+    # **Main Hand, Secondary Hand, Run Status, Seed, & Highest Ante Reached in Seed**
     #### ***(sorted in descending order)***
     """)
     return

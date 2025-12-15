@@ -14,13 +14,13 @@ It's designed to help me quickly understand my gameplay statistics and patterns 
 
 # Example Visuals
 ### Joker Counts
-<img src="screenshots\jokers_count.png" alt="Joker Counts" width=500>
+<img src="screenshots\jokers_count.png" alt="Joker Counts" width=600>
 
 ### Most Played Main and Secondary Hands
-<img src="screenshots\most_played_hands.png" alt="Most Played Hands" width=500>
+<img src="screenshots\most_played_hands.png" alt="Most Played Hands" width=600>
 
 ### Run Status
-<img src="\screenshots\run_status.png" alt="Run Status" width=500>
+<img src="\screenshots\run_status.png" alt="Run Status" width=600>
 
 # Requirements
 - Python 3.13.3

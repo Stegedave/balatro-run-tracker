@@ -14,7 +14,7 @@ def _():
 @app.cell
 def _(pd):
     # loading balatro data
-    path_to_data = r"C:\Users\WanDr\Desktop\balatro_hands.xlsx"
+    path_to_data = r"C:\Users\WanDr\Desktop\balatro_hands.xlsm"
     df = pd.read_excel(path_to_data, sheet_name="run_tracker", skiprows=2)
     return (df,)
 

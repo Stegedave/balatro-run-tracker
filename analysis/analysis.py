@@ -29,16 +29,23 @@ def _(mo):
 
 @app.cell
 def _(df):
-    # flattening jokers and counting frequency of each joker
     joker_cols = ['Main Joker 1', 'Main Joker 2', 'Main Joker 3', 'Main Joker 4', 'Main Joker 5', 'Additional Jokers']
 
-    # All jokers df
-    all_jokers = df[joker_cols].stack().dropna()
+    # Melt all joker columns into one column
+    melted = df[joker_cols].melt(value_name='Joker', var_name='Type')
 
-    # counting frequency of each joker
-    joker_count = all_jokers.value_counts()
+    # Drop missing values
+    melted = melted.dropna(subset=['Joker'])
 
-    # show joker count
+    # Split additional jokers by comma and flatten
+    melted = melted.assign(Joker=melted['Joker'].str.split(',')).explode('Joker')
+
+    # Strip whitespace and normalize -- remove "(copy)"
+    melted['Joker'] = melted['Joker'].str.strip().str.replace(r'\s*\(copy\)$', '', regex=True)
+
+    # Count frequency
+    joker_count = melted['Joker'].value_counts()
+
     joker_count
     return
 
@@ -130,9 +137,9 @@ def _(df):
 
 
 @app.cell
-def _(df):
+def _():
     # exporting to csv
-    df.to_csv("./data/balatro_powerbi.csv", index=False)
+    # df.to_csv("./data/balatro_powerbi.csv", index=False)
     return
 
 
